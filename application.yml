@@ -3,9 +3,14 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/rentDB?createDatabaseIfNotExist=true
     username: root
     password: test@123
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
